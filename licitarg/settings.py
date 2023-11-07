@@ -93,7 +93,8 @@ WSGI_APPLICATION = 'licitarg.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config('whitenoise[brotli]')
+    'default': dj_database_url.config(default='sqlite///db.sqlite3',
+                                      conn_health_checks=600)
     }
 
 
